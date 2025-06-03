@@ -98,3 +98,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS,            KC_TRNS,            KC_TRNS
     ),
 };
+// maybe move € next no ' on MAIN, F11 and F12 left, put mouse keys on the righ home row in OTHER
+// and find a position for left, middle, and right click, and maybe scrolling.
+// maybe by moving PDWN, PGUP, INS, HOME, END, to, MAIN layer so the KC_NOs get filled.
+// or find often used combos that can be put there, but maybe that does not work with the tap hold keys.
