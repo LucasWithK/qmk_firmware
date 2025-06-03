@@ -52,8 +52,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 };
 
 #define BASE 0
-#define MAIN 1
-#define OTHR 2
+#define NUMS 1
+#define NAVI 2
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [BASE] = LAYOUT(
@@ -63,36 +63,36 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_A,               KC_R,               KC_S,               KC_T,               KC_G,
         KC_M,               KC_N,               KC_E,               KC_I,               KC_O,
 
-        LGUI_T(KC_Z),       ALT_T(KC_X),        LCTL_T(KC_C),       LSFT_T(KC_D),       KC_V,
-        KC_K,               RSFT_T(KC_H),       RCTL_T(KC_COMM),    ALT_T(KC_DOT),      LGUI_T(KC_SLSH),
+        KC_Z,               KC_X,               KC_C,               KC_D,               KC_V,
+        KC_K,               KC_H,               KC_COMM,            KC_DOT,             KC_SLSH,
 
-        KC_ESC,             KC_BSPC,            KC_DEL,
-        LT(OTHR, KC_ENT),   LT(MAIN, KC_SPC),   KC_TAB
+        ALT_T(KC_LGUI),     SFT_T(KC_BSPC),     CTL_T(KC_DEL),
+        LT(NAVI, KC_ENT),   KC_SPC,             LT(NUMS, KC_TAB)
     ),
 
-    [MAIN] = LAYOUT(
+    [NUMS] = LAYOUT(
+        KC_F1,              KC_F2,              KC_F3,              KC_F4,              KC_F5,
+        KC_F6,              KC_F7,              KC_F8,              KC_F9,              KC_F10,
+
         KC_1,               KC_2,               KC_3,               KC_4,               KC_5,
         KC_6,               KC_7,               KC_8,               KC_9,               KC_0,
 
-        KC_GRV,             KC_EQL,             KC_MINS,            KC_QUOT,            UM(EU),
-        KC_NO,              KC_LEFT,            KC_DOWN,            KC_UP,              KC_RIGHT,
-
-        LGUI_T(KC_NO),      ALT_T(UP(ue, UE)),  LCTL_T(UP(oe, OE)), LSFT_T(UP(ae, AE)), UM(SS),
-        KC_NO,              RSFT_T(KC_LBRC),    RCTL_T(KC_RBRC),    ALT_T(KC_BSLS),     LGUI_T(KC_NO),
+        KC_ESC,             KC_GRV,             KC_EQL,             KC_MINS,            KC_F11,
+        KC_F12,             KC_LBRC,            KC_RBRC,            KC_QUOT,            KC_BSLS,
 
         KC_TRNS,            KC_TRNS,            KC_TRNS,
         KC_TRNS,            KC_TRNS,            KC_TRNS
     ),
 
-    [OTHR] = LAYOUT(
-        KC_F1,              KC_F2,              KC_F3,              KC_F4,              KC_F5,
-        KC_F6,              KC_F7,              KC_F8,              KC_F9,              KC_F10,
+    [NAVI] = LAYOUT(
+        KC_SCRL,            KC_PGUP,            KC_UP,              KC_PGDN,            KC_NO,
+        KC_NO,              KC_NO,              KC_NO,              KC_NO,              MY_UC_NEXT,
 
-        KC_NO,              KC_NO,              KC_NO,              KC_NO,              KC_F11,
-        KC_F12,             KC_NO,              KC_NO,              KC_NO,              KC_NO,
+        KC_CAPS,            KC_LEFT,            KC_DOWN,            KC_RIGHT,           KC_NO,
+        UM(EU),             UP(ae, AE),         UP(oe, OE),         UP(ue, UE),         UM(SS),
 
-        KC_CAPS,            KC_INS,             KC_HOME,            KC_END,             KC_NUM,
-        KC_PSCR,            KC_PAUS,            KC_PGDN,            KC_PGUP,            MY_UC_NEXT,
+        KC_NUM,             KC_INS,             KC_HOME,            KC_END,             KC_NO,
+        KC_NO,              KC_PSCR,            KC_PAUS,            KC_NO,              KC_NO,
 
         KC_TRNS,            KC_TRNS,            KC_TRNS,
         KC_TRNS,            KC_TRNS,            KC_TRNS
